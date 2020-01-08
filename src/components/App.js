@@ -68,7 +68,7 @@ class App extends Component {
   render() {
     return (
       <EnhancedPeopleList
-        title="People"
+        title="People 2"
         viewProfile={this.viewProfile}
         getData={this.getData}
         viewedIndex={this.state.viewedIndex}
