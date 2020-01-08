@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "../styles/App.css";
+import "../index.css";
 import PeopleList from "./PeopleList";
 import Profile from "./Profile";
 
@@ -8,10 +9,14 @@ function withHeaderFooter(Component) {
     return (
       <div className="App">
         <header>
-          <h2>{props.title}</h2>
+          <div className="wrapper">
+            <h2>{props.title}</h2>
+          </div>
         </header>
         <main>
-          <Component {...props} />
+          <div className="wrapper">
+            <Component {...props} />
+          </div>
         </main>
         <footer></footer>
       </div>
@@ -25,14 +30,20 @@ function withView(Component) {
     return (
       <div>
         <Component {...props} />
-        {(props.viewedIndex === -1 || props.backPress === true)? <div></div> : <Profile data={props.data[props.viewedIndex]} backPressed={props.backPressed}/>}
+        {props.viewedIndex === -1 || props.backPress === true ? (
+          <div></div>
+        ) : (
+          <Profile
+            data={props.data[props.viewedIndex]}
+            backPressed={props.backPressed}
+          />
+        )}
       </div>
     );
   };
 }
 
 const EnhancedPeopleList = withView(withHeaderFooter(PeopleList));
-
 class App extends Component {
   constructor() {
     super();
@@ -44,7 +55,7 @@ class App extends Component {
   }
 
   getData = data => {
-    console.log('getting data');
+    console.log("getting data");
     this.setState({
       data: data
     });
@@ -59,16 +70,16 @@ class App extends Component {
   };
 
   backPressed = () => {
-    console.log('backPressed');
+    console.log("backPressed");
     this.setState({
       backPress: true
     });
-  }
+  };
 
   render() {
     return (
       <EnhancedPeopleList
-        title="People 2"
+        title="People"
         viewProfile={this.viewProfile}
         getData={this.getData}
         viewedIndex={this.state.viewedIndex}

@@ -60,11 +60,20 @@
   text-align: right;
 }
 
-@keyframes example {
+@keyframes example1 {
   from {
-    top: 800px;
+    top: 100%;
   }
   to {
-    top: 0px;
+    top: 0;
+  }
+}
+
+@keyframes example2 {
+  from {
+    top: 0;
+  }
+  to {
+    top: 100%;
   }
 }

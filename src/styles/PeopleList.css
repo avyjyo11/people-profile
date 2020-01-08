@@ -1,11 +1,19 @@
+
 .people-list ul li {
-  padding: 10px 40px;
-  border-bottom: 1px solid black;
+  padding: 8px 40px;
+  margin-bottom: 3px;
   cursor: default;
+  border-radius: 6px;
+  background-color: #fff;
 }
 
 .people-list ul li:hover {
-  background-color: #fff;
+  background-color: rgb(20, 106, 177);
+  color: #fff;
+}
+
+.people-list ul li:hover img{
+  border: 2px groove #fff;
 }
 
 .people-img {

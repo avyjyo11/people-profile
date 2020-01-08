@@ -2,17 +2,42 @@ import React, { Component } from "react";
 import "../styles/Profile.css";
 
 class Profile extends Component {
+  constructor() {
+    super();
+    this.state = {
+      backPressed: false
+    }
+  }
+  pressingBack = () => {
+    this.setState({
+      backPressed: true
+    });
+    setTimeout(this.props.backPressed, 1000);
+  };
+
+  getStyle = () => {
+    if(!this.state.backPressed) {
+      return {
+        height: window.innerHeight,
+        animationName: "example1",
+        animationDuration: "1s",
+      }
+    } else {
+      return {
+        height: window.innerHeight,
+        animationName: "example2",
+        animationDuration: "1s"
+      }
+    }
+  };
+
   render() {
     const data = this.props.data;
     return (
-      <div className="profile-div" style={{
-        height: window.innerHeight,
-        animationName: 'example',
-        animationDuration: '1s'
-      }}>
+      <div className="profile-div" style={this.getStyle()} >
         <div className="profile-header">
           <div>
-            <button onClick={this.props.backPressed}>{"<"}</button>
+            <button onClick={this.pressingBack}>{"<"}</button>
           </div>
           <h2>View Profile</h2>
         </div>
