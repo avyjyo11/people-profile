@@ -1,0 +1,25 @@
+.people-list ul li {
+  padding: 10px 40px;
+  border-bottom: 1px solid black;
+  cursor: default;
+}
+
+.people-list ul li:hover {
+  background-color: #fff;
+}
+
+.people-img {
+  display: block;
+  flex-basis: 60px;
+}
+
+.people-img img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.people-name {
+  display: block;
+  line-height: 40px;
+}

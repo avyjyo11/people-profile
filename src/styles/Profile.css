@@ -1,0 +1,70 @@
+.profile-div {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  background-color: white;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10;
+}
+
+.profile-header {
+  display: flex;
+  box-shadow: 1px 1px 2px 1px #888;
+  background-color: #fff;
+  margin-bottom: 5px;
+}
+
+.profile-header h2 {
+  font-size: 1.1em;
+  font-weight: 600;
+  padding: 14px;
+  text-align: center;
+}
+
+.profile-header button {
+  font-size: 1.1em;
+  font-weight: 600;
+  padding: 16px;
+  background-color: #fff;
+  border: none;
+}
+
+.profile-img {
+  text-align: center;
+  background-color: rgb(245, 245, 245);
+  padding: 20px;
+  border-bottom: 1px solid black;
+}
+
+.profile-img img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+.profile-data {
+  display: flex;
+  width: 100%;
+}
+
+.profile-data div {
+  flex-basis: 50%;
+  padding: 10px;
+}
+
+.profile-values div {
+  text-align: right;
+}
+
+@keyframes example {
+  from {
+    top: 800px;
+  }
+  to {
+    top: 0px;
+  }
+}
