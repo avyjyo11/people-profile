@@ -7,12 +7,13 @@ class Profile extends Component {
     this.state = {
       backPressed: false
     }
+    this.timeout = 500;
   }
   pressingBack = () => {
     this.setState({
       backPressed: true
     });
-    setTimeout(this.props.backPressed, 1000);
+    setTimeout(this.props.backPressed, this.timeout);
   };
 
   getStyle = () => {
@@ -20,13 +21,13 @@ class Profile extends Component {
       return {
         height: window.innerHeight,
         animationName: "example1",
-        animationDuration: "1s",
+        animationDuration: this.timeout + "ms"
       }
     } else {
       return {
         height: window.innerHeight,
         animationName: "example2",
-        animationDuration: "1s"
+        animationDuration: this.timeout + "ms"
       }
     }
   };
